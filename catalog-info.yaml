@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: zefhkec4q-python-gitops
+  description: This is GitOps manifest for zefhkec4q-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=zefhkec4q-python
+    backstage.io/kubernetes-id: zefhkec4q-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: zefhkec4q-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:zefhkec4q-python
